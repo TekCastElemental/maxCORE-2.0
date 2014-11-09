@@ -32,10 +32,10 @@ import com.maxCORE.library.WorldGeneratormCore;
 import com.maxCORE.library.sapphireArmor;
 
 
-//MAXCORE 2.0 - Thanks to github for being an open platform to make this happen!
+//maxCORE v0.12; MinePLUS Resurrection. Can't be taken down now, full of new items, tools, and food.
 
 
-//TODO: Obsidian Headed Sapphire Tool Textures & Crafting Recipes
+
 
 
 
@@ -72,7 +72,6 @@ public void preInit(FMLPreInitializationEvent event)  {
 	
 	public static ToolMaterial toolStrongDiamond = net.minecraftforge.common.util.EnumHelper.addToolMaterial("STRONGDIAMOND", 3, 2000, 15.0F, 10.0F, 8);
 	public static ToolMaterial toolStrongIron = net.minecraftforge.common.util.EnumHelper.addToolMaterial("STRONGIRON", 4, 1700, 10.0F, 5.0F, 10);
-	public static ToolMaterial toolOBSapphire = net.minecraftforge.common.util.EnumHelper.addToolMaterial("TOOLOBSAPPHIRE", 7, 1965, 14.5F, 11.0F, 9);
 	public static ToolMaterial toolOBDIAMOND = net.minecraftforge.common.util.EnumHelper.addToolMaterial("OBDIAMOND", 5, 2361, 18.0F, 12.0F, 10);
 	public static ToolMaterial toolOBIRON = net.minecraftforge.common.util.EnumHelper.addToolMaterial("OBIRON", 6, 2060, 11.0F, 10.0F, 10);
 	
@@ -151,11 +150,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 	public static Item sspade =  new com.maxCORE.item.sspade(3066, maxCORE.toolStrongIron).setUnlocalizedName("sspade").setTextureName("maxCORE:SSPADE").setCreativeTab(tabmaxCORE);
 	public static Item ssword =  new com.maxCORE.item.ssword(3066, maxCORE.toolStrongIron).setUnlocalizedName("ssword").setTextureName("maxCORE:SSWORD").setCreativeTab(tabmaxCORE);
 	
-	//TOOLS: OHST
-	public static Item ohspick = new com.maxCORE.item.ohspick(3100, maxCORE.toolOBSapphire).setUnlocalizedName("ohspick").setTextureName("maxCORE:OHSPICK").setCreativeTab(tabmaxCORE);
-	public static Item ohsaxe = new com.maxCORE.item.ohsaxe(3101, maxCORE.toolOBSapphire).setUnlocalizedName("ohsaxe").setTextureName("maxCORE:OHSAXE").setCreativeTab(tabmaxCORE);
-	public static Item ohsspade = new com.maxCORE.item.ohsspade(3102, maxCORE.toolOBSapphire).setUnlocalizedName("ohsspade").setTextureName("maxCORE:OHSSPADE").setCreativeTab(tabmaxCORE);
-	public static Item ohssword = new com.maxCORE.item.ohssword(3102, maxCORE.toolOBSapphire).setUnlocalizedName("ohssword").setTextureName("maxCORE:OHSSWORD").setCreativeTab(tabmaxCORE);
+	
 	
 	//PUBLIC ITEM INSERTION
 	
@@ -286,11 +281,6 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.addShapelessRecipe(new ItemStack(DOHspade), new Object[]{RDspade, Blocks.obsidian});
 		GameRegistry.addShapelessRecipe(new ItemStack(DOHpick), new Object[]{RDpick, Blocks.obsidian});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(ohsaxe), new Object[]{saxe, Blocks.obsidian});
-		GameRegistry.addShapelessRecipe(new ItemStack(ohsspade), new Object[]{sspade, Blocks.obsidian});
-		GameRegistry.addShapelessRecipe(new ItemStack(ohspick), new Object[]{spick, Blocks.obsidian});
-		GameRegistry.addShapelessRecipe(new ItemStack(ohssword), new Object[]{ssword, Blocks.obsidian});
-		
 		//ITEM CRAFTING
 
 		GameRegistry.addRecipe(new ItemStack(IronStick, 2), new Object[]{"   ", " x ", " x ", 'x', Items.iron_ingot});
@@ -377,10 +367,6 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerItem(DOHaxe, "DOHaxe");
 		GameRegistry.registerItem(DOHspade, "DOHspade");
 		GameRegistry.registerItem(DOHsword, "DOHsword");
-		GameRegistry.registerItem(ohssword, "ohssword");
-		GameRegistry.registerItem(ohsaxe, "ohsaxe");
-		GameRegistry.registerItem(ohspick, "ohspick");
-		GameRegistry.registerItem(ohsspade, "ohsspade");
 	}
 	
 	
