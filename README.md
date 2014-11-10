@@ -1,4 +1,4 @@
-maxCORE-2.0 [![Build Status](https://travis-ci.org/TekCastElemental/maxCORE-2.0.svg?branch=master)](https://travis-ci.org/TekCastElemental/maxCORE-2.0?branch=master)
+maxCORE-2.0 [![Build Status](https://travis-ci.org/tarak/django-password-policies.svg?branch=0.3.0)](https://travis-ci.org/tarak/django-password-policies)
 ===========
 
 1.7.10
