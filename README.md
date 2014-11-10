@@ -10,7 +10,7 @@ DIFFERENCES IN BUILDS:
 Dev: First stage of Stable development
 Unstable: Missing .lang names for new items, sometimes no textures
 Stable: Everything works
-------------------------------------------------------------------
+
 
 
 maxCORE was a project I had back when I thought PMC was a great place for content. I love coding and being open sourced, so I joined github. 
