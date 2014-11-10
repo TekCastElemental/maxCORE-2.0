@@ -1,38 +1,18 @@
-<project name="maxCORE" default="dist" basedir=".">
-    <description>
-        maxCORE
-    </description>
-  <!-- set global properties for this build -->
-  <property name="src" location="C:\Users\Max\Desktop\JAVA\FORGE\gradle\src\maxCORE-2.0\main"/>
-  <property name="build" location="C:\Users\Max\Desktop\JAVA\FORGE\gradle\src"/>
-  <property name="dist"  location="dist"/>
+<?xml version="1.0"?>
 
-  <target name="init">
-    <!-- Create the time stamp -->
-    <tstamp/>
-    <!-- Create the build directory structure used by compile -->
-    <mkdir dir="${build}"/>
-  </target>
+<project name="chat" default="main" basedir=".">
+<target name="init">
+<property name="src.dir" value="."/>
+<property name="build.dir" value="."/>
+<property name="jar.dir" value="."/>
+<property name="classpath" value="c:\java\lib\tools.jar"/>
+</target>
 
-  <target name="compile" depends="init"
-        description="compile the source " >
-    <!-- Compile the java code from ${src} into ${build} -->
-    <javac srcdir="${src}" destdir="${build}"/>
-  </target>
+<target name="main" depends="init">
+<javac srcdir="${src.dir}" destdir="${build.dir}"
+classpath="${classpath}">
+<include name="**/*.java"/>
+</javac>
+</target>
 
-  <target name="dist" depends="compile"
-        description="generate the distribution" >
-    <!-- Create the distribution directory -->
-    <mkdir dir="${dist}/lib"/>
-
-    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${build}"/>
-  </target>
-
-  <target name="clean"
-        description="clean up" >
-    <!-- Delete the ${build} and ${dist} directory trees -->
-    <delete dir="${build}"/>
-    <delete dir="${dist}"/>
-  </target>
 </project>
