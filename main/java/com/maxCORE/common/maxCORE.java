@@ -35,9 +35,8 @@ import com.maxCORE.library.sapphireArmor;
 //MAXCORE 2.0 - Thanks to github for being an open platform to make this happen!
 
 
-//TODO: Obsidian Headed Sapphire Tool Textures & Crafting Recipes
 
-
+//REMINDER: Add hoe tools!
 
 
 //PROXY SETUP
@@ -202,7 +201,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 	
 	public maxCORE() {
 		
-		//FOOD CRAFTING
+		//FOOD CRAFTING - Reminder: think of new food
 		GameRegistry.addSmelting(Items.egg, new ItemStack(eggs), 0.1f);
 		GameRegistry.addShapelessRecipe(new ItemStack(sap, 1), new Object[]{new ItemStack(Blocks.log, 1, 0), treetap});
 		GameRegistry.addShapelessRecipe(new ItemStack(syrup, 1), new Object[]{sap, Items.bucket});
