@@ -7,9 +7,7 @@ TekModding
 
 ------------------------------------------------------------------
 DIFFERENCES IN BUILDS:
-Dev: First stage of Stable development
-Unstable: Missing .lang names for new items, sometimes no textures
-Stable: Everything works
+Dev: First stage of Stable development | Unstable: Missing .lang names for new items, sometimes no textures | Stable: Everything works
 
 
 
