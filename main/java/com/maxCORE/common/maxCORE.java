@@ -37,7 +37,7 @@ import com.maxCORE.library.sapphireArmor;
 
 
 //PROXY SETUP
-@Mod(modid = "maxcore", name = "maxcore", version = "2.0.3")
+@Mod(modid = "maxcore", name = "maxcore", version = "2.1.0")
 public class maxCORE {
 @SidedProxy(clientSide = "com.maxCORE.common.ClientProxy", serverSide = "com.maxCORE.common.CommonProxy")
 public static CommonProxy proxy;
@@ -159,6 +159,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 	public static Item IDhoe = new com.maxCORE.item.idhoe(3104, maxCORE.toolStrongIron).setUnlocalizedName("idhoe").setTextureName("maxCORE:IDHOE").setCreativeTab(tabmaxCORE);
 	public static Item DOHhoe = new com.maxCORE.item.dohhoe(3104, maxCORE.toolOBDIAMOND).setUnlocalizedName("dohhoe").setTextureName("maxCORE:DOHHOE").setCreativeTab(tabmaxCORE);	
 	public static Item OHIhoe = new com.maxCORE.item.ohihoe(3104, maxCORE.toolOBIRON).setUnlocalizedName("ohihoe").setTextureName("maxCORE:OHIHOE").setCreativeTab(tabmaxCORE);
+	public static Item shoe = new com.maxCORE.item.shoe(3104, maxCORE.toolStrongIron).setUnlocalizedName("shoe").setTextureName("maxCORE:SHOE").setCreativeTab(tabmaxCORE);
 	//PUBLIC ITEM INSERTION
 	
 	
@@ -299,6 +300,16 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.addRecipe(new ItemStack(treetap, 4), new Object[]{"xxx", "x x", "x  ", 'x', Items.stick});
 		GameRegistry.addRecipe(new ItemStack(steeldagger, 1), new Object[]{"   ", " x ", "t  ", 'x', Items.iron_ingot, 't', Items.stick});
 		
+		GameRegistry.addRecipe(new ItemStack(shoe, 1), new Object[]{"xx ", " t ", " t ", 'x', singot, 't', IronStick});
+		GameRegistry.addRecipe(new ItemStack(shoe, 1), new Object[]{" xx", " t ", " t ", 'x', singot, 't', IronStick});
+		GameRegistry.addShapelessRecipe(new ItemStack(ohshoe, 1), new Object[]{shoe, Blocks.obsidian});
+		GameRegistry.addRecipe(new ItemStack(IDhoe, 1), new Object[]{"xx ", " t ", " t ", 'x', Items.iron_ingot, 't', IronStick});
+		GameRegistry.addRecipe(new ItemStack(IDhoe, 1), new Object[]{" xx", " t ", " t ", 'x', Items.iron_ingot, 't', IronStick});
+		GameRegistry.addShapelessRecipe(new ItemStack(OHIhoe, 1), new Object[]{IDhoe, Blocks.obsidian});
+		GameRegistry.addRecipe(new ItemStack(RDhoe, 1), new Object[]{"xx ", " t ", " t ", 'x', Items.diamond, 't', IronStick});
+		GameRegistry.addRecipe(new ItemStack(RDhoe, 1), new Object[]{" xx", " t ", " t ", 'x', Items.diamond, 't', IronStick});
+		GameRegistry.addShapelessRecipe(new ItemStack(DOHhoe), new Object[]{RDhoe, Blocks.obsidian});
+		
 		GameRegistry.addSmelting(new ItemStack(sORE, 1), new ItemStack(singot, 1), 0.1f);
 		
 		
@@ -390,6 +401,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerItem(ohsaxe, "ohsaxe");
 		GameRegistry.registerItem(ohspick, "ohspick");
 		GameRegistry.registerItem(ohsspade, "ohsspade");
+		GameRegistry.registerItem(shoe, "shoe");
 	}
 	
 	
