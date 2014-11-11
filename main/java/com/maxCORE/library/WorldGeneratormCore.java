@@ -31,5 +31,6 @@ int Zcoord = BlockZ + random.nextInt(16);
 int Ycoord = random.nextInt(16);
 
 (new WorldGenMinable(maxCORE.marble, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
+(new WorldGenMinable(maxCORE.sORE, 14)).generate(world, random, Xcoord, Ycoord, Zcoord);
 }}}
 

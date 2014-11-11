@@ -14,6 +14,9 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.world.WorldType;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -29,7 +32,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import com.maxCORE.block.mBLOCK;
 import com.maxCORE.library.CreativeTabsmaxCORE;
 import com.maxCORE.library.Event_LivingDrops;
-import com.maxCORE.library.WorldGeneratorMCORESAPPHIREBLOCK;
 import com.maxCORE.library.WorldGeneratormCore;
 import com.maxCORE.library.sapphireArmor;
 
@@ -39,7 +41,7 @@ import com.maxCORE.library.sapphireArmor;
 
 
 //PROXY SETUP
-@Mod(modid = "maxcore", name = "maxcore", version = "2.2.0")
+@Mod(modid = "maxcore", name = "maxcore", version = "2.2.5")
 public class maxCORE {
 @SidedProxy(clientSide = "com.maxCORE.common.ClientProxy", serverSide = "com.maxCORE.common.CommonProxy")
 public static CommonProxy proxy;
@@ -51,6 +53,7 @@ public void preInit(FMLPreInitializationEvent event)  {
     	MinecraftForge.EVENT_BUS.register(new Event_LivingDrops());
     
     	System.out.println("Event Handler Initialized");
+    	BiomeManager.addSpawnBiome(Cherry);
 	
 }
 
@@ -76,6 +79,8 @@ public void preInit(FMLPreInitializationEvent event)  {
 	
 	
 	
+	
+	public static BiomeGenBase Cherry;
 	
 	
 	
@@ -105,6 +110,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 	public static Block sORE = new com.maxCORE.block.sORE(3056, Material.rock).setBlockName("sORE").setBlockTextureName("maxCORE:sORE");
 	public static Block wWood = new com.maxCORE.block.wWood(3200, Material.wood).setBlockName("wWood").setBlockTextureName("maxCORE:wWood");
 	public static Block rWood = new com.maxCORE.block.rWood(3201, Material.wood).setBlockName("rWood").setBlockTextureName("maxCORE:rWood");
+	public static Block autumnCover = new com.maxCORE.block.autumncover(3301, Material.grass).setBlockName("autumnCover").setBlockTextureName("maxCORE:autumnground");
 	
 	//FENCES
 	public static Block swFence =  new BlockFence("maxCORE:swood", Material.wood).setBlockName("swFence").setCreativeTab(tabmaxCORE);
@@ -257,15 +263,21 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerBlock(rWood, "rWood");
 		GameRegistry.registerBlock(wFence, "wFence");
 		GameRegistry.registerBlock(rFence, "rFence");
-
+		GameRegistry.registerBlock(autumnCover, "AutumnCover");
 		
 		RenderingRegistry.addNewArmourRendererPrefix("5");
 		
+		
+		
+		Cherry = new BiomeGenCherry(242).setBiomeName("Cherry").setTemperatureRainfall(1.2F, 0.9F).setColor(chestplateSapphireID);
 		
 		helmetSapphire = new sapphireArmor(maxCORE.enumArmorMaterialSapphire, 5, 0).setUnlocalizedName("helmetSapphire").setCreativeTab(tabmaxCORE);
 		chestplateSapphire = new sapphireArmor(maxCORE.enumArmorMaterialSapphire, 5, 1).setUnlocalizedName("chestplateSapphire").setCreativeTab(tabmaxCORE);
 		legsSapphire = new sapphireArmor(maxCORE.enumArmorMaterialSapphire, 5, 2).setUnlocalizedName("legsSapphire").setCreativeTab(tabmaxCORE);
 		bootsSapphire = new sapphireArmor(maxCORE.enumArmorMaterialSapphire, 5, 3).setUnlocalizedName("bootsSapphire").setCreativeTab(tabmaxCORE);
+		
+		
+		
 		
 		//TOOLCRAFTING
 		
@@ -362,7 +374,6 @@ public void preInit(FMLPreInitializationEvent event)  {
 		//GENERATION REGISTRATION
 		
 		GameRegistry.registerWorldGenerator(new WorldGeneratormCore(), 0);
-		GameRegistry.registerWorldGenerator(new WorldGeneratorMCORESAPPHIREBLOCK(), 0);
 		
 		//ITEM REGISTRY
 		
@@ -421,6 +432,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerItem(ohspick, "ohspick");
 		GameRegistry.registerItem(ohsspade, "ohsspade");
 		GameRegistry.registerItem(shoe, "shoe");
+		BiomeManager.warmBiomes.add(new BiomeManager.BiomeEntry(Cherry,10));
 	}
 	
 	

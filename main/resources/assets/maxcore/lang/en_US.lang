@@ -28,6 +28,7 @@ tile.rWood.name=Red Wood
 tile.wWood.name=White Wood
 tile.rFence.name=Red Fence
 tile.wFence.name=White Fence
+tile.autumnCover.name=Autumn Ground
 
 
 
