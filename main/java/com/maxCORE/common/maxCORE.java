@@ -37,7 +37,7 @@ import com.maxCORE.library.sapphireArmor;
 
 
 //PROXY SETUP
-@Mod(modid = "maxcore", name = "maxcore")
+@Mod(modid = "maxcore", name = "maxcore", version = "2.0.3")
 public class maxCORE {
 @SidedProxy(clientSide = "com.maxCORE.common.ClientProxy", serverSide = "com.maxCORE.common.CommonProxy")
 public static CommonProxy proxy;
