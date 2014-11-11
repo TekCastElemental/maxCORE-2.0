@@ -22,7 +22,8 @@ tile.blbrick.name=Blue Brick
 tile.mbrick.name=Magenta Brick
 tile.ybrick.name=Yellow Brick
 tile.sORE.name=Sapphire Ore
-
+tile.swFence.name=Saturated Wood Fence
+tile.bwFence.name=Black Wood Fence
 
 
 

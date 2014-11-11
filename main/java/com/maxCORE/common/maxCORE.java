@@ -2,6 +2,7 @@ package com.maxCORE.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
+import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -38,7 +39,7 @@ import com.maxCORE.library.sapphireArmor;
 
 
 //PROXY SETUP
-@Mod(modid = "maxcore", name = "maxcore", version = "2.1.1")
+@Mod(modid = "maxcore", name = "maxcore", version = "2.1.2")
 public class maxCORE {
 @SidedProxy(clientSide = "com.maxCORE.common.ClientProxy", serverSide = "com.maxCORE.common.CommonProxy")
 public static CommonProxy proxy;
@@ -102,11 +103,12 @@ public void preInit(FMLPreInitializationEvent event)  {
 	public static Block blbrick = new com.maxCORE.block.blbrick(3011, Material.rock).setBlockName("blbrick").setBlockTextureName("maxCORE:blbrick");
 	public static Block ybrick = new com.maxCORE.block.ybrick(3011, Material.rock).setBlockName("ybrick").setBlockTextureName("maxCORE:ybrick");
 	public static Block sORE = new com.maxCORE.block.sORE(3056, Material.rock).setBlockName("sORE").setBlockTextureName("maxCORE:sORE");
+	public static Block wWood = new com.maxCORE.block.wWood(3200, Material.wood).setBlockName("wWood").setBlockTextureName("maxCORE:wWood");
+	public static Block rWood = new com.maxCORE.block.rWood(3201, Material.wood).setBlockName("rWood").setBlockTextureName("maxCORE:rWood");
 	
 	//FENCES
 	public static Block swFence =  new BlockFence("maxCORE:swood", Material.wood).setBlockName("swFence").setCreativeTab(tabmaxCORE);
 	public static Block bwFence = new BlockFence("maxCORE:bwood", Material.wood).setBlockName("bwFence").setCreativeTab(tabmaxCORE);
-	
 	
 	//PUBLIC TOOL INSERTION
 	
@@ -161,10 +163,10 @@ public void preInit(FMLPreInitializationEvent event)  {
 	//Tools: Hoes
 	public static Item ohshoe = new com.maxCORE.item.ohshoe(3103, maxCORE.toolOBSapphire).setUnlocalizedName("ohshoe").setTextureName("maxCORE:OHSHOE").setCreativeTab(tabmaxCORE);
 	public static Item RDhoe = new com.maxCORE.item.rdhoe(3104, maxCORE.toolStrongDiamond).setUnlocalizedName("rdhoe").setTextureName("maxCORE:RDHOE").setCreativeTab(tabmaxCORE);
-	public static Item IDhoe = new com.maxCORE.item.idhoe(3104, maxCORE.toolStrongIron).setUnlocalizedName("idhoe").setTextureName("maxCORE:IDHOE").setCreativeTab(tabmaxCORE);
-	public static Item DOHhoe = new com.maxCORE.item.dohhoe(3104, maxCORE.toolOBDIAMOND).setUnlocalizedName("dohhoe").setTextureName("maxCORE:DOHHOE").setCreativeTab(tabmaxCORE);	
-	public static Item OHIhoe = new com.maxCORE.item.ohihoe(3104, maxCORE.toolOBIRON).setUnlocalizedName("ohihoe").setTextureName("maxCORE:OHIHOE").setCreativeTab(tabmaxCORE);
-	public static Item shoe = new com.maxCORE.item.shoe(3104, maxCORE.toolStrongIron).setUnlocalizedName("shoe").setTextureName("maxCORE:SHOE").setCreativeTab(tabmaxCORE);
+	public static Item IDhoe = new com.maxCORE.item.idhoe(3105, maxCORE.toolStrongIron).setUnlocalizedName("idhoe").setTextureName("maxCORE:IDHOE").setCreativeTab(tabmaxCORE);
+	public static Item DOHhoe = new com.maxCORE.item.dohhoe(3106, maxCORE.toolOBDIAMOND).setUnlocalizedName("dohhoe").setTextureName("maxCORE:DOHHOE").setCreativeTab(tabmaxCORE);	
+	public static Item OHIhoe = new com.maxCORE.item.ohihoe(3107, maxCORE.toolOBIRON).setUnlocalizedName("ohihoe").setTextureName("maxCORE:OHIHOE").setCreativeTab(tabmaxCORE);
+	public static Item shoe = new com.maxCORE.item.shoe(3108, maxCORE.toolStrongIron).setUnlocalizedName("shoe").setTextureName("maxCORE:SHOE").setCreativeTab(tabmaxCORE);
 	//PUBLIC ITEM INSERTION
 	
 	
@@ -249,8 +251,8 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerBlock(sORE, "sORE");
 		GameRegistry.registerBlock(swFence, "swFence");
 		GameRegistry.registerBlock(bwFence, "bwFence");
-		
-		
+		GameRegistry.registerBlock(wWood, "wWood");
+		GameRegistry.registerBlock(rWood, "rWood");
 
 		
 		RenderingRegistry.addNewArmourRendererPrefix("5");
