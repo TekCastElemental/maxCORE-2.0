@@ -1,4 +1,4 @@
-maxCORE-2.0.1 [DEV BUILD]
+maxCORE-2.0.2 [DEV BUILD]
 ===========
 
 1.7.10
