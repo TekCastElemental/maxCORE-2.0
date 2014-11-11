@@ -1,6 +1,7 @@
 package com.maxCORE.common;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -37,7 +38,7 @@ import com.maxCORE.library.sapphireArmor;
 
 
 //PROXY SETUP
-@Mod(modid = "maxcore", name = "maxcore", version = "2.1.0")
+@Mod(modid = "maxcore", name = "maxcore", version = "2.1.1")
 public class maxCORE {
 @SidedProxy(clientSide = "com.maxCORE.common.ClientProxy", serverSide = "com.maxCORE.common.CommonProxy")
 public static CommonProxy proxy;
@@ -101,6 +102,10 @@ public void preInit(FMLPreInitializationEvent event)  {
 	public static Block blbrick = new com.maxCORE.block.blbrick(3011, Material.rock).setBlockName("blbrick").setBlockTextureName("maxCORE:blbrick");
 	public static Block ybrick = new com.maxCORE.block.ybrick(3011, Material.rock).setBlockName("ybrick").setBlockTextureName("maxCORE:ybrick");
 	public static Block sORE = new com.maxCORE.block.sORE(3056, Material.rock).setBlockName("sORE").setBlockTextureName("maxCORE:sORE");
+	
+	//FENCES
+	public static Block swFence =  new BlockFence("maxCORE:swood", Material.wood).setBlockName("swFence").setCreativeTab(tabmaxCORE);
+	public static Block bwFence = new BlockFence("maxCORE:bwood", Material.wood).setBlockName("bwFence").setCreativeTab(tabmaxCORE);
 	
 	
 	//PUBLIC TOOL INSERTION
@@ -242,7 +247,8 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerBlock(mbrick, "mbrick");
 		GameRegistry.registerBlock(ybrick, "ybrick");
 		GameRegistry.registerBlock(sORE, "sORE");
-		
+		GameRegistry.registerBlock(swFence, "swFence");
+		GameRegistry.registerBlock(bwFence, "bwFence");
 		
 		
 
@@ -326,6 +332,11 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.addShapelessRecipe(new ItemStack(ybrick, 4), new Object[]{new ItemStack(Blocks.wool, 1, 4), Blocks.brick_block});
 		GameRegistry.addShapelessRecipe(new ItemStack(bwood, 4), new Object[]{IronStick, new ItemStack(Blocks.planks, 1, 0)});
 		GameRegistry.addShapelessRecipe(new ItemStack(swood, 4), new Object[]{new ItemStack(Blocks.planks, 1, 0), new ItemStack(Items.dye, 1, 14)});
+		GameRegistry.addShapelessRecipe(new ItemStack(swFence, 4), new Object[]{Blocks.fence, new ItemStack(Items.dye, 1, 14)});
+		GameRegistry.addShapelessRecipe(new ItemStack(bwFence, 4), new Object[]{Blocks.fence, IronStick});
+		
+		
+		
 		
 		//LAMP CRAFTING
 		GameRegistry.addShapelessRecipe(new ItemStack(wLAMP, 2), new Object[]{Blocks.wool, Blocks.redstone_lamp});
