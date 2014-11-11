@@ -36,11 +36,8 @@ import com.maxCORE.library.sapphireArmor;
 
 
 
-//REMINDER: Add hoe tools!
-
-
 //PROXY SETUP
-@Mod(modid = "maxCORE", name = "maxCORE")
+@Mod(modid = "maxcore", name = "maxcore")
 public class maxCORE {
 @SidedProxy(clientSide = "com.maxCORE.common.ClientProxy", serverSide = "com.maxCORE.common.CommonProxy")
 public static CommonProxy proxy;
@@ -156,6 +153,12 @@ public void preInit(FMLPreInitializationEvent event)  {
 	public static Item ohsspade = new com.maxCORE.item.ohsspade(3102, maxCORE.toolOBSapphire).setUnlocalizedName("ohsspade").setTextureName("maxCORE:OHSSPADE").setCreativeTab(tabmaxCORE);
 	public static Item ohssword = new com.maxCORE.item.ohssword(3102, maxCORE.toolOBSapphire).setUnlocalizedName("ohssword").setTextureName("maxCORE:OHSSWORD").setCreativeTab(tabmaxCORE);
 	
+	//Tools: Hoes
+	public static Item ohshoe = new com.maxCORE.item.ohshoe(3103, maxCORE.toolOBSapphire).setUnlocalizedName("ohshoe").setTextureName("maxCORE:OHSHOE").setCreativeTab(tabmaxCORE);
+	public static Item RDhoe = new com.maxCORE.item.rdhoe(3104, maxCORE.toolStrongDiamond).setUnlocalizedName("rdhoe").setTextureName("maxCORE:RDHOE").setCreativeTab(tabmaxCORE);
+	public static Item IDhoe = new com.maxCORE.item.idhoe(3104, maxCORE.toolStrongIron).setUnlocalizedName("idhoe").setTextureName("maxCORE:IDHOE").setCreativeTab(tabmaxCORE);
+	public static Item DOHhoe = new com.maxCORE.item.dohhoe(3104, maxCORE.toolOBDIAMOND).setUnlocalizedName("dohhoe").setTextureName("maxCORE:DOHHOE").setCreativeTab(tabmaxCORE);	
+	public static Item OHIhoe = new com.maxCORE.item.ohihoe(3104, maxCORE.toolOBIRON).setUnlocalizedName("ohihoe").setTextureName("maxCORE:OHIHOE").setCreativeTab(tabmaxCORE);
 	//PUBLIC ITEM INSERTION
 	
 	
@@ -347,6 +350,13 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerItem(ssword, "ssword");
 		GameRegistry.registerItem(saxe, "saxe");
 		GameRegistry.registerItem(spick, "spick");
+		
+		GameRegistry.registerItem(OHIhoe, "ohihoe");
+		GameRegistry.registerItem(ohshoe, "ohshoe");
+		GameRegistry.registerItem(RDhoe, "rdhoe");
+		GameRegistry.registerItem(IDhoe, "idhoe");
+		GameRegistry.registerItem(DOHhoe, "dohhoe");
+		
 		
 		
 		GameRegistry.registerItem(singot, "singot");
