@@ -24,6 +24,10 @@ tile.ybrick.name=Yellow Brick
 tile.sORE.name=Sapphire Ore
 tile.swFence.name=Saturated Wood Fence
 tile.bwFence.name=Black Wood Fence
+tile.rWood.name=Red Wood
+tile.wWood.name=White Wood
+tile.rFence.name=Red Fence
+tile.wFence.name=White Fence
 
 
 

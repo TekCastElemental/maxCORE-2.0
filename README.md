@@ -1,4 +1,4 @@
-maxCORE-2.1.2[DEV BUILD]
+maxCORE-2.2.0[STABLE BUILD]
 ===========
 
 1.7.10
