@@ -3,6 +3,8 @@ package com.maxCORE.common;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -32,6 +34,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import com.maxCORE.block.mBLOCK;
 import com.maxCORE.library.CreativeTabsmaxCORE;
 import com.maxCORE.library.Event_LivingDrops;
+import com.maxCORE.library.WorldGeneratorSapphireOre;
 import com.maxCORE.library.WorldGeneratormCore;
 import com.maxCORE.library.sapphireArmor;
 
@@ -41,7 +44,7 @@ import com.maxCORE.library.sapphireArmor;
 
 
 //PROXY SETUP
-@Mod(modid = "maxcore", name = "maxcore", version = "2.2.5")
+@Mod(modid = "maxcore", name = "maxcore", version = "2.3.0")
 public class maxCORE {
 @SidedProxy(clientSide = "com.maxCORE.common.ClientProxy", serverSide = "com.maxCORE.common.CommonProxy")
 public static CommonProxy proxy;
@@ -111,12 +114,17 @@ public void preInit(FMLPreInitializationEvent event)  {
 	public static Block wWood = new com.maxCORE.block.wWood(3200, Material.wood).setBlockName("wWood").setBlockTextureName("maxCORE:wWood");
 	public static Block rWood = new com.maxCORE.block.rWood(3201, Material.wood).setBlockName("rWood").setBlockTextureName("maxCORE:rWood");
 	public static Block autumnCover = new com.maxCORE.block.autumncover(3301, Material.grass).setBlockName("autumnCover").setBlockTextureName("maxCORE:autumnground");
-	
+	public static Block oldcobble = new com.maxCORE.block.oldcobble(3302, Material.rock).setBlockName("oldcobble").setBlockTextureName("maxCORE:oldcobble").setCreativeTab(tabmaxCORE);
+	public static Block cobbleslab = new com.maxCORE.block.cobbleslab(false, Material.rock).setBlockTextureName("maxCORE:oldcobble").setBlockName("cobbleslab").setCreativeTab(tabmaxCORE);
 	//FENCES
 	public static Block swFence =  new BlockFence("maxCORE:swood", Material.wood).setBlockName("swFence").setCreativeTab(tabmaxCORE);
 	public static Block bwFence = new BlockFence("maxCORE:bwood", Material.wood).setBlockName("bwFence").setCreativeTab(tabmaxCORE);
 	public static Block rFence = new BlockFence("maxCore:rWood", Material.wood).setBlockName("rFence").setCreativeTab(tabmaxCORE);
 	public static Block wFence = new BlockFence("maxCORE:wWood", Material.wood).setBlockName("wFence").setCreativeTab(tabmaxCORE);
+	public static Block swStair = new com.maxCORE.block.swStair(maxCORE.swood, 0).setBlockName("swStair").setCreativeTab(tabmaxCORE);
+	public static Block bStair = new com.maxCORE.block.bStair(maxCORE.bwood, 0).setBlockName("bStair").setCreativeTab(tabmaxCORE);
+	public static Block wStair = new com.maxCORE.block.wStair(maxCORE.wWood, 0).setBlockName("wStair").setCreativeTab(tabmaxCORE);
+	public static Block rStair = new com.maxCORE.block.rStair(maxCORE.rWood, 0).setBlockName("rStair").setCreativeTab(tabmaxCORE);
 	
 	//PUBLIC TOOL INSERTION
 	
@@ -264,6 +272,12 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerBlock(wFence, "wFence");
 		GameRegistry.registerBlock(rFence, "rFence");
 		GameRegistry.registerBlock(autumnCover, "AutumnCover");
+		GameRegistry.registerBlock(oldcobble, "oldcobble");
+		GameRegistry.registerBlock(swStair, "swStair");
+		GameRegistry.registerBlock(wStair, "wStair");
+		GameRegistry.registerBlock(bStair, "bStair");
+		GameRegistry.registerBlock(rStair, "rStair");
+		GameRegistry.registerBlock(cobbleslab, "cobbleslab");
 		
 		RenderingRegistry.addNewArmourRendererPrefix("5");
 		
@@ -317,6 +331,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.addShapelessRecipe(new ItemStack(ohsspade), new Object[]{sspade, Blocks.obsidian});
 		GameRegistry.addShapelessRecipe(new ItemStack(ohspick), new Object[]{spick, Blocks.obsidian});
 		GameRegistry.addShapelessRecipe(new ItemStack(ohssword), new Object[]{ssword, Blocks.obsidian});
+		GameRegistry.addShapelessRecipe(new ItemStack(oldcobble, 32), new Object[]{Blocks.cobblestone, Items.stone_pickaxe});
 		
 		//ITEM CRAFTING
 
@@ -368,12 +383,16 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.addShapelessRecipe(new ItemStack(brLAMP, 2), new Object[]{new ItemStack(Blocks.wool, 1, 12), wLAMP});
 		GameRegistry.addShapelessRecipe(new ItemStack(gLAMP, 2), new Object[]{new ItemStack(Blocks.wool, 1, 5), wLAMP});
 		
-		
-		
+		//STAIR CRAFTING
+		GameRegistry.addRecipe(new ItemStack(swStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', swood});
+		GameRegistry.addRecipe(new ItemStack(bStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', bwood});
+		GameRegistry.addRecipe(new ItemStack(wStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', wWood});
+		GameRegistry.addRecipe(new ItemStack(rStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', rWood});
 		
 		//GENERATION REGISTRATION
 		
 		GameRegistry.registerWorldGenerator(new WorldGeneratormCore(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGeneratorSapphireOre(), 0);
 		
 		//ITEM REGISTRY
 		
@@ -432,7 +451,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerItem(ohspick, "ohspick");
 		GameRegistry.registerItem(ohsspade, "ohsspade");
 		GameRegistry.registerItem(shoe, "shoe");
-		BiomeManager.warmBiomes.add(new BiomeManager.BiomeEntry(Cherry,10));
+		BiomeManager.warmBiomes.add(new BiomeManager.BiomeEntry(Cherry,350));
 	}
 	
 	

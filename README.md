@@ -1,4 +1,4 @@
-maxCORE-2.2.5[STABLE BUILD]
+maxCORE-2.3.0[EXPERIMENTAL BUILD]
 ===========
 
 1.7.10
@@ -18,6 +18,9 @@ Reinforced Diamond and Iron (Excluding Hoes currently.)
 Obsidian Headed Diamond and Iron (Excluding Hoes currently.)
 Sapphire and Obsidian headed sapphire (Excluding Hoes currently.)
 
+Biomes:
+Cherry (Looks exactly like beta)
+
 Foods:
 Pancake
 Syrup Pancake
@@ -34,6 +37,7 @@ Sapphire Armor
 Ores:
 Sapphire Ore
 Marble
+Old Cobblestone
 
 Blocks:
 Colored Lamps
@@ -42,3 +46,7 @@ Modern Glass
 Black Wood
 Saturated Wood
 Colored Brick
+Colored Fence
+Colored Stairs
+Old Cobblestone
+Cobble slab

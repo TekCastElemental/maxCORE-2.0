@@ -29,6 +29,12 @@ tile.wWood.name=White Wood
 tile.rFence.name=Red Fence
 tile.wFence.name=White Fence
 tile.autumnCover.name=Autumn Ground
+tile.oldcobble.name=Old CobbleStone
+tile.swStair.name=Saturated Stairs
+tile.wStair.name=White Stairs
+tile.bStair.name=Black Stairs
+tile.rStair.name=Red Stairs
+tile.cobbleslab.name=Cobble Half-Slab
 
 
 
