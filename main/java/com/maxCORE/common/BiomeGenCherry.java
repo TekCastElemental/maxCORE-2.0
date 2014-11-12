@@ -10,7 +10,7 @@ public class BiomeGenCherry extends BiomeGenBase {
 		this.topBlock = Blocks.grass;
 		this.fillerBlock = Blocks.dirt;
 		this.theBiomeDecorator.treesPerChunk = 50;
-		this.theBiomeDecorator.flowersPerChunk = 150;
+		this.theBiomeDecorator.flowersPerChunk = 20;
 		
 	}
 

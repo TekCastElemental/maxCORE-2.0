@@ -1,4 +1,4 @@
-maxCORE-2.3.0[EXPERIMENTAL BUILD]
+maxCORE-2.3.2[HOTFIX BUILD]
 ===========
 
 1.7.10
