@@ -35,6 +35,12 @@ tile.wStair.name=White Stairs
 tile.bStair.name=Black Stairs
 tile.rStair.name=Red Stairs
 tile.cobbleslab.name=Cobble Half-Slab
+tile.bbrickStair.name=Black Brick Stairs
+tile.gbrickStair.name=Green Brick Stairs
+tile.pbrickStair.name=Purple Brick Stairs
+tile.blbrickStair.name=Blue Brick Stairs
+tile.mbrickStair.name=Magenta Brick Stairs
+tile.ybrick.name=Yellow Brick Stairs
 
 
 

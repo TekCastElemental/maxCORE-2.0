@@ -1,4 +1,4 @@
-maxCORE-2.3.2[HOTFIX BUILD]
+maxCORE-2.4.0[STABLE BUILD]
 ===========
 
 1.7.10
@@ -11,7 +11,7 @@ Dev: First stage of Stable development | Unstable: Missing .lang names for new i
 
 
 
-maxCORE was a project I had back when I thought PMC was a great place for content. I love coding and being open sourced, so I joined github. 
+
 
 Tools:
 Reinforced Diamond and Iron (Excluding Hoes currently.)
@@ -45,8 +45,9 @@ White Walling
 Modern Glass
 Black Wood
 Saturated Wood
-Colored Brick
-Colored Fence
-Colored Stairs
+Coloured Brick
+Coloured Fence
+Coloured Stairs
 Old Cobblestone
 Cobble slab
+Brick Coloured Stairs

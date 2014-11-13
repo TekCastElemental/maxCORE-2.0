@@ -44,7 +44,7 @@ import com.maxCORE.library.sapphireArmor;
 
 
 //PROXY SETUP
-@Mod(modid = "maxcore", name = "maxcore", version = "2.3.2")
+@Mod(modid = "maxcore", name = "maxcore", version = "2.4.0")
 public class maxCORE {
 @SidedProxy(clientSide = "com.maxCORE.common.ClientProxy", serverSide = "com.maxCORE.common.CommonProxy")
 public static CommonProxy proxy;
@@ -125,6 +125,12 @@ public void preInit(FMLPreInitializationEvent event)  {
 	public static Block bStair = new com.maxCORE.block.bStair(maxCORE.bwood, 0).setBlockName("bStair").setCreativeTab(tabmaxCORE);
 	public static Block wStair = new com.maxCORE.block.wStair(maxCORE.wWood, 0).setBlockName("wStair").setCreativeTab(tabmaxCORE);
 	public static Block rStair = new com.maxCORE.block.rStair(maxCORE.rWood, 0).setBlockName("rStair").setCreativeTab(tabmaxCORE);
+	public static Block bbrickStair = new com.maxCORE.block.bbrickStair(maxCORE.bbrick, 0).setBlockName("bbrickStair").setCreativeTab(tabmaxCORE);
+	public static Block gbrickStair = new com.maxCORE.block.gbrickStair(maxCORE.gbrick, 0).setBlockName("gbrickStair").setCreativeTab(tabmaxCORE);
+	public static Block pbrickStair = new com.maxCORE.block.pbrickStair(maxCORE.pbrick, 0).setBlockName("pbrickStair").setCreativeTab(tabmaxCORE);
+	public static Block mbrickStair = new com.maxCORE.block.mbrickStair(maxCORE.mbrick, 0).setBlockName("mbrickStair").setCreativeTab(tabmaxCORE);
+	public static Block blbrickStair = new com.maxCORE.block.blbrickStair(maxCORE.blbrick, 0).setBlockName("blbrickStair").setCreativeTab(tabmaxCORE);
+	public static Block ybrickStair = new com.maxCORE.block.ybrickStair(maxCORE.ybrick, 0).setBlockName("ybrickStair").setCreativeTab(tabmaxCORE);
 	
 	//PUBLIC TOOL INSERTION
 	
@@ -278,6 +284,12 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.registerBlock(bStair, "bStair");
 		GameRegistry.registerBlock(rStair, "rStair");
 		GameRegistry.registerBlock(cobbleslab, "cobbleslab");
+		GameRegistry.registerBlock(bbrickStair, "bbrickStair");
+		GameRegistry.registerBlock(gbrickStair, "gbrickStair");
+		GameRegistry.registerBlock(pbrickStair, "pbrickStair");
+		GameRegistry.registerBlock(mbrickStair, "mbrickStair");
+		GameRegistry.registerBlock(blbrickStair, "blbrickStair");
+		GameRegistry.registerBlock(ybrickStair, "ybrickStair");
 		
 		RenderingRegistry.addNewArmourRendererPrefix("5");
 		
@@ -371,7 +383,7 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.addShapelessRecipe(new ItemStack(wWood, 4), new Object[]{new ItemStack(Blocks.planks, 1, 0), Blocks.wool});
 		GameRegistry.addShapelessRecipe(new ItemStack(wFence, 4), new Object[]{Blocks.fence, Blocks.wool});
 		GameRegistry.addShapelessRecipe(new ItemStack(rFence, 4), new Object[]{Blocks.fence, new ItemStack(Items.dye, 1, 14)});
-		
+		GameRegistry.addRecipe(new ItemStack(cobbleslab, 6), new Object[]{"   ", "   ", "xxx", 'x', oldcobble});
 		
 		//LAMP CRAFTING
 		GameRegistry.addShapelessRecipe(new ItemStack(wLAMP, 2), new Object[]{Blocks.wool, Blocks.redstone_lamp});
@@ -388,6 +400,12 @@ public void preInit(FMLPreInitializationEvent event)  {
 		GameRegistry.addRecipe(new ItemStack(bStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', bwood});
 		GameRegistry.addRecipe(new ItemStack(wStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', wWood});
 		GameRegistry.addRecipe(new ItemStack(rStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', rWood});
+		GameRegistry.addRecipe(new ItemStack(bbrickStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', bbrick});
+		GameRegistry.addRecipe(new ItemStack(gbrickStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', gbrick});
+		GameRegistry.addRecipe(new ItemStack(pbrickStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', pbrick});
+		GameRegistry.addRecipe(new ItemStack(mbrickStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', mbrick});
+		GameRegistry.addRecipe(new ItemStack(blbrickStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', blbrick});
+		GameRegistry.addRecipe(new ItemStack(ybrickStair, 4), new Object[]{"x  ", "xx ", "xxx", 'x', ybrick});
 		
 		//GENERATION REGISTRATION
 		
